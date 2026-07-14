@@ -1,0 +1,17 @@
+name: fdsa-yolo
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.12.4
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - torch==2.5.1+cu124
+      - torchvision==0.20.1+cu124
+      - ultralytics==8.4.51
+      - numpy
+      - pillow
+      - pyyaml
+      - pycocotools

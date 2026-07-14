@@ -1,0 +1,41 @@
+--- a/ultralytics/nn/modules/block.py
++++ b/ultralytics/nn/modules/block.py
+@@ -2071,3 +2071,8 @@
+             self.float()
+         z, log_det = self.backward_p(x)
+         return self.prior.log_prob(z) + log_det
++
++
++# FDSA-YOLO compatibility exports. The implementation is maintained in
++# the release package so published checkpoints retain their original path.
++from fdsa_yolo.block import HFP_SCR_Gate, P4P3_FDSA, P4P3_FRMLite, P4P3_R16_ScaleAttn
+--- a/ultralytics/nn/tasks.py
++++ b/ultralytics/nn/tasks.py
+@@ -73,6 +73,7 @@
+     YOLOESegment26,
+     v10Detect,
+ )
++from fdsa_yolo import HFP_SCR_Gate, P4P3_FDSA, P4P3_FRMLite, P4P3_R16_ScaleAttn
+ from ultralytics.utils import DEFAULT_CFG_DICT, LOGGER, SETTINGS, WINDOWS, YAML, colorstr, emojis
+ from ultralytics.utils.checks import REMOTE_FILE_PREFIXES, check_file, check_requirements, check_suffix, check_yaml
+ from ultralytics.utils.loss import (
+@@ -1630,6 +1631,7 @@
+             SCDown,
+             C2fCIB,
+             A2C2f,
++            HFP_SCR_Gate,
+         }
+     )
+     repeat_modules = frozenset(  # modules with 'repeat' arguments
+@@ -1686,6 +1688,11 @@
+                     args.extend((True, 1.2))
+             if m is C2fCIB:
+                 legacy = False
++        elif m in frozenset({P4P3_FRMLite, P4P3_FDSA, P4P3_R16_ScaleAttn}):
++            c2 = args[0]
++            if c2 != nc:
++                c2 = make_divisible(min(c2, max_channels) * width, 8)
++            args = [[ch[x] for x in f], c2, *args[1:]]
+         elif m is AIFI:
+             args = [ch[f], *args]
+         elif m in frozenset({HGStem, HGBlock}):

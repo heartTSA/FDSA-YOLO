@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article and software DOI."
+title: "FDSA-YOLO"
+version: "1.0.0"
+date-released: "[YYYY-MM-DD]"
+authors:
+  - family-names: "[FAMILY NAME]"
+    given-names: "[GIVEN NAME]"
+    orcid: "https://orcid.org/[ORCID]"
+repository-code: "[GITHUB URL]"
+license: "AGPL-3.0"
