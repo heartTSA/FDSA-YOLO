@@ -1,0 +1,20 @@
+{
+  "title": "FDSA-YOLO",
+  "upload_type": "software",
+  "description": "Official implementation of FDSA-YOLO for drone remote-sensing object detection.",
+  "creators": [
+    {
+      "name": "Huang, Wentao",
+      "orcid": "0009-0008-4408-4273"
+    }
+  ],
+  "license": "agpl-3.0",
+  "keywords": [
+    "object detection",
+    "drone remote sensing",
+    "small object detection",
+    "space-frequency representation",
+    "feature fusion",
+    "YOLO"
+  ]
+}
