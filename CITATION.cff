@@ -8,4 +8,4 @@ authors:
     given-names: "Wentao"
     orcid: "https://orcid.org/0009-0008-4408-4273"
 repository-code: "https://github.com/heartTSA/FDSA-YOLO"
-license: "AGPL-3.0"
+license: "AGPL-3.0-only"
