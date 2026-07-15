@@ -1,6 +1,6 @@
 # FDSA-YOLO
 
-Minimal implementation of the **Frequency-Decoupled Scale Arbitration Neck** used in the associated Journal of Remote Sensing manuscript. The release contains only the published SCFR, PFM, and DSA path; historical architecture searches and datasets are intentionally excluded.
+Minimal implementation of the **Frequency-Decoupled Scale Arbitration Neck** . The release contains only the published SCFR, PFM, and DSA path; historical architecture searches and datasets are intentionally excluded.
 
 ## Contents
 
