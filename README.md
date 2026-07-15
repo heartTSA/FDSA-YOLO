@@ -1,5 +1,5 @@
 [![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21373224.svg)](https://doi.org/10.5281/zenodo.21373224)
-[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21369814.svg)](https://doi.org/10.5281/zenodo.21369814)****
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21369814.svg)](https://doi.org/10.5281/zenodo.21369814)
 # FDSA-YOLO
 
 Minimal implementation of the **Frequency-Decoupled Scale Arbitration Neck**. The release contains only the published SCFR, PFM, and DSA path; historical architecture searches and datasets are intentionally excluded.
@@ -36,7 +36,7 @@ The paper models were trained from random initialization for 150 epochs at 640 p
 
 ## Data and checkpoints
 
-Obtain VisDrone and UAVDT from their official providers and update the YAML paths locally. The nine `best.pt` checkpoints and paper-facing evidence are archived separately at `https://doi.org/10.5281/zenodo.21369814`. The software DOI is issued by Zenodo after the first GitHub release and is listed on the repository release page.
+Obtain VisDrone and UAVDT from their official providers and update the YAML paths locally. The nine `best.pt` checkpoints and paper-facing evidence are archived separately at `https://doi.org/10.5281/zenodo.21369814`. The software release is archived at https://doi.org/10.5281/zenodo.21373224, while the checkpoints and paper-facing evidence are available at https://doi.org/10.5281/zenodo.21369814.
 
 ## License and citation
 
