@@ -8,7 +8,7 @@
       "orcid": "0009-0008-4408-4273"
     }
   ],
-  "license": "agpl-3.0",
+  "license": "agpl-3.0-only",
   "keywords": [
     "object detection",
     "drone remote sensing",
