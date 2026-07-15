@@ -9,6 +9,13 @@
     }
   ],
   "license": "agpl-3.0-only",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.21369814",
+      "relation": "isSupplementedBy",
+      "resource_type": "dataset"
+    }
+  ]
   "keywords": [
     "object detection",
     "drone remote sensing",
