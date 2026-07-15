@@ -38,4 +38,9 @@ Obtain VisDrone and UAVDT from their official providers and update the YAML path
 
 ## License and citation
 
-Code is released under AGPL-3.0. Complete `CITATION.cff` and repository/DOI placeholders before the public v1.0.0 release.
+Code is released under AGPL-3.0. 
+## Citation and archival records
+
+- Software release: https://doi.org/10.5281/zenodo.21373224
+- Reproducibility package: https://doi.org/10.5281/zenodo.21369814
+- Source repository: https://github.com/heartTSA/FDSA-YOLO
