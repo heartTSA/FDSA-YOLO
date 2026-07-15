@@ -1,6 +1,8 @@
 {
   "title": "FDSA-YOLO",
   "upload_type": "software",
+  "version": "1.0.0",
+  "access_right": "open",
   "description": "Official implementation of FDSA-YOLO for drone remote-sensing object detection.",
   "creators": [
     {
@@ -15,7 +17,7 @@
       "relation": "isSupplementedBy",
       "resource_type": "dataset"
     }
-  ]
+  ],
   "keywords": [
     "object detection",
     "drone remote sensing",
