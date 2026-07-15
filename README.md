@@ -1,3 +1,5 @@
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21373224.svg)](https://doi.org/10.5281/zenodo.21373224)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21369814.svg)](https://doi.org/10.5281/zenodo.21369814)****
 # FDSA-YOLO
 
 Minimal implementation of the **Frequency-Decoupled Scale Arbitration Neck**. The release contains only the published SCFR, PFM, and DSA path; historical architecture searches and datasets are intentionally excluded.
