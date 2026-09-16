@@ -1,6 +1,6 @@
 # FDSA-YOLO v1.1.0
 
-- Sets `pretrained=False` explicitly for YAML-instantiated training.
-- Uses stable Zenodo concept DOIs in public documentation.
-- Updates software contributor and citation metadata.
-- Does not change the released network architecture or checkpoint tensors.
+Source code, model configurations, training and evaluation scripts, and reproducibility utilities for FDSA-YOLO.
+
+- Software archive: https://doi.org/10.5281/zenodo.21373223
+- Reproducibility data: https://doi.org/10.5281/zenodo.21369813

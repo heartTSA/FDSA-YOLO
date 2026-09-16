@@ -32,7 +32,7 @@ python scripts/validate.py --weights runs/fdsa/train/fdsa_seed0/weights/best.pt 
 python scripts/benchmark_latency.py --weights runs/fdsa/train/fdsa_seed0/weights/best.pt --output runs/fdsa/latency/fdsa_seed0.json --device 0
 ```
 
-The paper models were trained from random initialization for 150 epochs at 640 pixels. All public training and evidence scripts set `pretrained=False` explicitly. Archived historical `args.yaml` files can show the Ultralytics Boolean default `pretrained: true`; because those runs instantiated models from YAML rather than a `.pt` path, no checkpoint parameters were transferred. Complete training, validation, augmentation, seed, and hardware protocols are provided in the manuscript and supplementary material.
+The paper models were trained from random initialization for 150 epochs at 640 x 640 resolution. Complete training, validation, augmentation, seed, and hardware settings are provided in the manuscript and supplementary material.
 
 ## Data and checkpoints
 
@@ -50,4 +50,4 @@ Code is released under AGPL-3.0-only.
 
 ## Version 1.1.0
 
-This release makes YAML-only random initialization explicit with `pretrained=False`, updates archival links to their stable concept DOIs, and aligns citation metadata with the documented software contributors.
+Version 1.1.0 contains the FDSA-YOLO implementation, model configurations, training and evaluation scripts, and reproducibility utilities.
