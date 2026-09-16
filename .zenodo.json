@@ -1,29 +1,32 @@
 {
   "title": "FDSA-YOLO",
   "upload_type": "software",
-  "version": "1.0.0",
-  "access_right": "open",
-  "description": "Official implementation of FDSA-YOLO for drone remote-sensing object detection.",
+  "description": "Minimal implementation of FDSA-YOLO for dense drone-image object detection.",
   "creators": [
     {
       "name": "Huang, Wentao",
       "orcid": "0009-0008-4408-4273"
+    },
+    {
+      "name": "Liu, Yifan",
+      "orcid": "0009-0001-9273-0179"
     }
   ],
+  "version": "1.1.0",
   "license": "agpl-3.0-only",
+  "access_right": "open",
+  "keywords": [
+    "drone imagery",
+    "small-object detection",
+    "multiscale feature fusion",
+    "frequency-aware representation",
+    "YOLOv8"
+  ],
   "related_identifiers": [
     {
-      "identifier": "https://doi.org/10.5281/zenodo.21369814",
+      "identifier": "https://doi.org/10.5281/zenodo.21369813",
       "relation": "isSupplementedBy",
-      "resource_type": "dataset"
+      "scheme": "doi"
     }
-  ],
-  "keywords": [
-    "object detection",
-    "drone remote sensing",
-    "small object detection",
-    "space-frequency representation",
-    "feature fusion",
-    "YOLO"
   ]
 }

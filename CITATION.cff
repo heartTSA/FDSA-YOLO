@@ -1,12 +1,14 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated article and software release."
+message: "If you use this software, please cite the software archive and associated article."
 title: "FDSA-YOLO"
-version: "1.0.0"
-date-released: "2026-07-15"
-doi: "10.5281/zenodo.21373224"
+version: "1.1.0"
 authors:
   - family-names: "Huang"
     given-names: "Wentao"
     orcid: "https://orcid.org/0009-0008-4408-4273"
+  - family-names: "Liu"
+    given-names: "Yifan"
+    orcid: "https://orcid.org/0009-0001-9273-0179"
 repository-code: "https://github.com/heartTSA/FDSA-YOLO"
+doi: "10.5281/zenodo.21373223"
 license: "AGPL-3.0-only"

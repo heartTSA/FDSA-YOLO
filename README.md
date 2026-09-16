@@ -1,5 +1,5 @@
-[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21373224.svg)](https://doi.org/10.5281/zenodo.21373224)
-[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21369814.svg)](https://doi.org/10.5281/zenodo.21369814)
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21373223.svg)](https://doi.org/10.5281/zenodo.21373223)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21369813.svg)](https://doi.org/10.5281/zenodo.21369813)
 # FDSA-YOLO
 
 Minimal implementation of the **Frequency-Decoupled Scale Arbitration Neck**. The release contains only the published SCFR, PFM, and DSA path; historical architecture searches and datasets are intentionally excluded.
@@ -32,17 +32,22 @@ python scripts/validate.py --weights runs/fdsa/train/fdsa_seed0/weights/best.pt 
 python scripts/benchmark_latency.py --weights runs/fdsa/train/fdsa_seed0/weights/best.pt --output runs/fdsa/latency/fdsa_seed0.json --device 0
 ```
 
-The paper models were trained from random initialization for 150 epochs at 640 pixels. Complete training, validation, augmentation, seed, and hardware protocols are provided in the manuscript and supplementary material.
+The paper models were trained from random initialization for 150 epochs at 640 pixels. All public training and evidence scripts set `pretrained=False` explicitly. Archived historical `args.yaml` files can show the Ultralytics Boolean default `pretrained: true`; because those runs instantiated models from YAML rather than a `.pt` path, no checkpoint parameters were transferred. Complete training, validation, augmentation, seed, and hardware protocols are provided in the manuscript and supplementary material.
 
 ## Data and checkpoints
 
-Obtain VisDrone and UAVDT from their official providers and update the YAML paths locally. The nine `best.pt` checkpoints and paper-facing evidence are archived separately at `https://doi.org/10.5281/zenodo.21369814`. The software release is archived at https://doi.org/10.5281/zenodo.21373224, while the checkpoints and paper-facing evidence are available at https://doi.org/10.5281/zenodo.21369814.
+Obtain VisDrone and UAVDT from their official providers and update the YAML paths locally. The nine `best.pt` checkpoints and paper-facing evidence are archived at https://doi.org/10.5281/zenodo.21369813. The versioned software archive is available at https://doi.org/10.5281/zenodo.21373223.
 
 ## License and citation
 
-Code is released under AGPL-3.0. 
+Code is released under AGPL-3.0-only.
+
 ## Citation and archival records
 
-- Software release: https://doi.org/10.5281/zenodo.21373224
-- Reproducibility package: https://doi.org/10.5281/zenodo.21369814
+- Software release: https://doi.org/10.5281/zenodo.21373223
+- Reproducibility package: https://doi.org/10.5281/zenodo.21369813
 - Source repository: https://github.com/heartTSA/FDSA-YOLO
+
+## Version 1.1.0
+
+This release makes YAML-only random initialization explicit with `pretrained=False`, updates archival links to their stable concept DOIs, and aligns citation metadata with the documented software contributors.
