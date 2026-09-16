@@ -57,7 +57,7 @@ TRAIN_STATIC_KWARGS = {
     "save": True,
     "save_period": -1,
     "cache": False,
-    "pretrained": True,
+    "pretrained": False,
     "optimizer": "auto",
     "deterministic": True,
     "rect": False,

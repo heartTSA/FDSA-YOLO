@@ -19,7 +19,7 @@ def main():
     args = p.parse_args()
     YOLO(args.model).train(data=args.data, project=args.project, name=args.name, device=args.device,
         seed=args.seed, batch=args.batch, workers=args.workers, imgsz=args.imgsz, epochs=args.epochs,
-        patience=args.patience, pretrained=True, optimizer="auto", deterministic=True, amp=True,
+        patience=args.patience, pretrained=False, optimizer="auto", deterministic=True, amp=True,
         plots=True, save=True, save_period=-1)
 
 if __name__ == "__main__":
