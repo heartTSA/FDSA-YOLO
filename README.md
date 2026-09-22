@@ -2,15 +2,15 @@
 [![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21369813.svg)](https://doi.org/10.5281/zenodo.21369813)
 # FDSA-YOLO
 
-Minimal implementation of the **Frequency-Decoupled Scale Arbitration Neck**. The release contains only the published SCFR, PFM, and DSA path; historical architecture searches and datasets are intentionally excluded.
+Implementation of the **Frequency-Decoupled Scale Arbitration Neck** for object detection in dense drone imagery.
 
 ## Contents
 
-- `fdsa_yolo/block.py`: clean SCFR, PFM, and FDSA module implementation.
-- `models/`: SCFR, SCFR+PFM, and FDSA-YOLO model definitions.
+- `fdsa_yolo/block.py`: SCFR, PFM, and FDSA modules.
+- `models/`: SCFR, SCFR+PFM, FDSA-YOLO, and dependency-aware ablation definitions.
 - `patches/`: parser and checkpoint-compatibility patch for Ultralytics 8.4.51.
-- `scripts/`: training, validation, FP32 latency, evidence, and smoke-test entry points.
-- `configs/visdrone.yaml.example`: dataset configuration template; no dataset files are redistributed.
+- `scripts/`: training, validation, latency, evidence, ablation, and smoke-test entry points.
+- `configs/visdrone.yaml.example`: VisDrone dataset configuration template.
 
 ## Installation
 
@@ -24,7 +24,7 @@ python scripts/smoke_test.py --models-dir models --device cpu
 
 The public model name is `P4P3_FDSA`. `P4P3_R16_ScaleAttn` is retained only as a compatibility alias for the archived checkpoints.
 
-## Reproduction
+## Training and Evaluation
 
 ```bash
 python scripts/train.py --model models/yolov8n_fdsa.yaml --data /path/to/visdrone.yaml --name fdsa_seed0 --seed 0 --device 0
@@ -32,22 +32,37 @@ python scripts/validate.py --weights runs/fdsa/train/fdsa_seed0/weights/best.pt 
 python scripts/benchmark_latency.py --weights runs/fdsa/train/fdsa_seed0/weights/best.pt --output runs/fdsa/latency/fdsa_seed0.json --device 0
 ```
 
-The paper models were trained from random initialization for 150 epochs at 640 x 640 resolution. Complete training, validation, augmentation, seed, and hardware settings are provided in the manuscript and supplementary material.
+The paper models use 640 x 640 inputs and 150 training epochs. The complete protocol is recorded in the manuscript and supplementary material.
+
+## Dependency-Aware Ablation
+
+The following command trains PFM-only and PFM+DSA-without-SCFR on two GPUs, then runs sequential validation and FP32 batch-1 latency measurement:
+
+```bash
+python scripts/run_drones_ablation.py \
+  --phase all \
+  --gpus 5,6 \
+  --data /path/to/visdrone.yaml \
+  --output runs/drones_ablation
+```
+
+The output is complete when `DOWNLOAD_READY.txt` is present.
 
 ## Data and checkpoints
 
-Obtain VisDrone and UAVDT from their official providers and update the YAML paths locally. The nine `best.pt` checkpoints and paper-facing evidence are archived at https://doi.org/10.5281/zenodo.21369813. The versioned software archive is available at https://doi.org/10.5281/zenodo.21373223.
+Obtain VisDrone and UAVDT from their official providers and update the YAML paths locally. Checkpoints, source data, and experiment evidence are archived under the reproducibility-package concept DOI.
 
 ## License and citation
 
 Code is released under AGPL-3.0-only.
 
-## Citation and archival records
+## Archival Records
 
-- Software release: https://doi.org/10.5281/zenodo.21373223
-- Reproducibility package: https://doi.org/10.5281/zenodo.21369813
+- Software concept DOI: https://doi.org/10.5281/zenodo.21373223
+- Reproducibility-package concept DOI: https://doi.org/10.5281/zenodo.21369813
+- Current reproducibility record: https://doi.org/10.5281/zenodo.22128271
 - Source repository: https://github.com/heartTSA/FDSA-YOLO
 
-## Version 1.1.0
+## Version 1.2.0
 
-Version 1.1.0 contains the FDSA-YOLO implementation, model configurations, training and evaluation scripts, and reproducibility utilities.
+Version 1.2.0 adds the dependency-aware PFM and DSA ablations and their one-command experiment runner.

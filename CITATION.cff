@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the software archive and associated article."
 title: "FDSA-YOLO"
-version: "1.1.0"
+version: "1.2.0"
 authors:
   - family-names: "Huang"
     given-names: "Wentao"
