@@ -59,8 +59,9 @@ Code is released under AGPL-3.0-only.
 ## Archival Records
 
 - Software concept DOI: https://doi.org/10.5281/zenodo.21373223
+- Current software record: https://doi.org/10.5281/zenodo.22896571
 - Reproducibility-package concept DOI: https://doi.org/10.5281/zenodo.21369813
-- Current reproducibility record: https://doi.org/10.5281/zenodo.22128271
+- Current reproducibility record: https://doi.org/10.5281/zenodo.22896620
 - Source repository: https://github.com/heartTSA/FDSA-YOLO
 
 ## Version 1.2.0
