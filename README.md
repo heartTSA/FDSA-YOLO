@@ -59,11 +59,34 @@ Code is released under AGPL-3.0-only.
 ## Archival Records
 
 - Software concept DOI: https://doi.org/10.5281/zenodo.21373223
-- Current software record: https://doi.org/10.5281/zenodo.22896571
+- Software archive (all versions): https://doi.org/10.5281/zenodo.21373223
 - Reproducibility-package concept DOI: https://doi.org/10.5281/zenodo.21369813
-- Current reproducibility record: https://doi.org/10.5281/zenodo.22896620
+- Reproducibility package (all versions): https://doi.org/10.5281/zenodo.21369813
 - Source repository: https://github.com/heartTSA/FDSA-YOLO
 
-## Version 1.2.0
+## Recent-Method and Weather Evaluation
 
-Version 1.2.0 adds the dependency-aware PFM and DSA ablations and their one-command experiment runner.
+`scripts/run_drones_editor_benchmarks.py` runs VisDrone and HazyDet training, validation, common COCO evaluation, and latency measurement. `scripts/run_fdsa_weather_probe.py` evaluates existing checkpoints on clean, synthetic-degraded, and real-haze images and reports paired image-bootstrap intervals.
+
+Clone the comparison sources at the recorded commits:
+
+```bash
+git clone https://github.com/HZAI-ZJNU/FRFDet sources/FRFDet
+git -C sources/FRFDet checkout d424df831da98f0184a8316e73b545add2b0f7a5
+git clone https://github.com/bearono-s/GS-YOLO sources/GS-YOLO
+git -C sources/GS-YOLO checkout b6e72bf21075a037f1962cc0412cb4faf7047667
+python scripts/run_drones_editor_benchmarks.py --phase all --gpus 0 --fdsa-root /path/to/patched-ultralytics --sources sources --hazydet-root /path/to/HazyDet --visdrone-yaml /path/to/visdrone.yaml --output /path/to/results/editor_benchmark
+```
+
+Obtain HazyDet from [the official project](https://github.com/GrokCV/HazyDet). Common evaluation uses confidence 0.001, NMS IoU 0.7, and maxDet 300. Source-data files include native metrics, training settings, framework versions, and scoring audits. New throughput measurements use RTX 4080 SUPER FP32 batch 1; original A10 measurements remain in the earlier records.
+
+For weather evaluation, place `real_world.zip` at `/path/to/base/data/HazyDet/real_world.zip`, retain the benchmark output, and provide the VisDrone YAML:
+
+```bash
+python scripts/run_fdsa_weather_probe.py --phase all --base /path/to/base --gpu 0 --fdsa-root /path/to/patched-ultralytics --sources sources --benchmark-output /path/to/results/editor_benchmark --visdrone-yaml /path/to/visdrone.yaml
+```
+
+## Version 1.3.0
+
+Adds recent-method benchmarking, weather evaluation, common COCO scoring, and paired-bootstrap reporting.
+

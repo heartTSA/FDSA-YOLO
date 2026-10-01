@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the software archive and associated article."
 title: "FDSA-YOLO"
-version: "1.2.0"
+version: "1.3.0"
 authors:
   - family-names: "Huang"
     given-names: "Wentao"
@@ -12,3 +12,4 @@ authors:
 repository-code: "https://github.com/heartTSA/FDSA-YOLO"
 doi: "10.5281/zenodo.21373223"
 license: "AGPL-3.0-only"
+date-released: "2026-10-01"
