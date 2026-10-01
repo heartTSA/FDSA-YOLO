@@ -59,9 +59,7 @@ Code is released under AGPL-3.0-only.
 ## Archival Records
 
 - Software concept DOI: https://doi.org/10.5281/zenodo.21373223
-- Software archive (all versions): https://doi.org/10.5281/zenodo.21373223
 - Reproducibility-package concept DOI: https://doi.org/10.5281/zenodo.21369813
-- Reproducibility package (all versions): https://doi.org/10.5281/zenodo.21369813
 - Source repository: https://github.com/heartTSA/FDSA-YOLO
 
 ## Recent-Method and Weather Evaluation
@@ -86,7 +84,7 @@ For weather evaluation, place `real_world.zip` at `/path/to/base/data/HazyDet/re
 python scripts/run_fdsa_weather_probe.py --phase all --base /path/to/base --gpu 0 --fdsa-root /path/to/patched-ultralytics --sources sources --benchmark-output /path/to/results/editor_benchmark --visdrone-yaml /path/to/visdrone.yaml
 ```
 
-## Version 1.3.0
+## Version 1.3.1
 
 Adds recent-method benchmarking, weather evaluation, common COCO scoring, and paired-bootstrap reporting.
 
